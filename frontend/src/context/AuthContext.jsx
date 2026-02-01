@@ -1,7 +1,15 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import axios from "axios";
 
+
+
+
 const API_URL = import.meta.env.VITE_API_URL;
+
+const api = axios.create({
+  baseURL: API_URL,
+});
+
 
 const AuthContext = createContext(null);
 
@@ -13,11 +21,7 @@ export const useAuth = () => {
   return context;
 };
 
-// ✅ Create ONE axios instance
-const api = axios.create({
-  baseURL: API_URL,
-  
-});
+
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
