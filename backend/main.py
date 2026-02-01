@@ -40,6 +40,7 @@ async def startup_event():
     print(f"🚀 {settings.app_name} started successfully!")
     print(f"📊 Database: {settings.database_url}")
     print(f"🤖 LLM Model: {settings.llm_model}")
+    print(f"🌐 CORS Origins: {settings.cors_origins}")  # Debug CORS
 
 
 @app.get("/")
