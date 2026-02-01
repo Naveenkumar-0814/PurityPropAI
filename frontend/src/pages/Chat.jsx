@@ -5,6 +5,8 @@ import { useAuth } from '../context/AuthContext';
 import ChatMessage from '../components/ChatMessage';
 import ChatInput from '../components/ChatInput';
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 function Chat() {
     const [messages, setMessages] = useState([]);
     const [sessionId, setSessionId] = useState(null);
@@ -31,7 +33,7 @@ function Chat() {
         try {
             setLoading(true);
             setError(null);
-            const response = await axios.post('/api/sessions', {}, {
+            const response = await axios.post(`${API_URL}/api/sessions`, {}, {
                 headers: { Authorization: `Bearer ${token} ` }
             });
             setSessionId(response.data.session_id);
@@ -69,7 +71,7 @@ function Chat() {
         setError(null);
 
         try {
-            const response = await axios.post('/api/chat', {
+            const response = await axios.post(`${API_URL}/api/chat`, {
                 session_id: sessionId,
                 message: messageText
             }, {

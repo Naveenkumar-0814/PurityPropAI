@@ -6,6 +6,8 @@ import { useChat } from '../context/ChatContext';
 import PremiumInput from '../components/PremiumInput';
 import { Bot, User, Copy, Check } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 const AIChat = () => {
     const { messages, currentChatId, addMessage, createNewChat } = useChat();
     const [sessionId, setSessionId] = useState(null);
@@ -58,8 +60,8 @@ const AIChat = () => {
 
     const createNewSession = async () => {
         try {
-            const response = await axios.post('/api/sessions', {}, {
-                headers: token ? { Authorization: `Bearer ${token}` } : {}
+            const response = await axios.post(`${API_URL} /api/sessions`, {}, {
+                headers: token ? { Authorization: `Bearer ${token} ` } : {}
             });
             setSessionId(response.data.session_id);
 
@@ -87,11 +89,11 @@ const AIChat = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('/api/chat', {
+            const response = await axios.post(`${API_URL} /api/chat`, {
                 session_id: sessionId,
                 message: messageText
             }, {
-                headers: token ? { Authorization: `Bearer ${token}` } : {}
+                headers: token ? { Authorization: `Bearer ${token} ` } : {}
             });
 
             const assistantMessage = {
@@ -117,7 +119,7 @@ const AIChat = () => {
         <div className="chat-container">
             <div className="chat-messages">
                 {messages.map((msg, index) => (
-                    <div key={index} className={`message-wrapper ${msg.role}`}>
+                    <div key={index} className={`message - wrapper ${msg.role} `}>
                         <div className="message-avatar">
                             {msg.role === 'user' ? <User size={20} /> : <Bot size={20} />}
                         </div>

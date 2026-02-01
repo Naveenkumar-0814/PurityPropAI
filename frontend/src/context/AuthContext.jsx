@@ -1,6 +1,9 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
+// Use environment variable for API URL, fallback to relative path for development
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 const AuthContext = createContext(null);
 
 export const useAuth = () => {
@@ -36,7 +39,7 @@ export const AuthProvider = ({ children }) => {
                         const refreshToken = localStorage.getItem('refresh_token');
                         if (!refreshToken) throw new Error('No refresh token');
 
-                        const res = await axios.post('/api/auth/refresh', { refresh_token: refreshToken });
+                        const res = await axios.post(`${API_URL}/api/auth/refresh`, { refresh_token: refreshToken });
                         const { access_token } = res.data;
 
                         // Update local storage and state
@@ -64,7 +67,7 @@ export const AuthProvider = ({ children }) => {
 
     const fetchCurrentUser = async () => {
         try {
-            const response = await axios.get('/api/auth/me', {
+            const response = await axios.get(`${API_URL}/api/auth/me`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setUser(response.data);
@@ -79,7 +82,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const login = async (email, password) => {
-        const response = await axios.post('/api/auth/login', { email, password });
+        const response = await axios.post(`${API_URL}/api/auth/login`, { email, password });
         const { access_token, refresh_token, user: userData } = response.data;
 
         localStorage.setItem('token', access_token);
@@ -91,7 +94,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const register = async (name, email, password) => {
-        const response = await axios.post('/api/auth/register', { name, email, password });
+        const response = await axios.post(`${API_URL}/api/auth/register`, { name, email, password });
         const { access_token, refresh_token, user: userData } = response.data;
 
         localStorage.setItem('token', access_token);
