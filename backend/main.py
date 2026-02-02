@@ -15,19 +15,19 @@ app = FastAPI(
 
 from app.config import settings
 
-# ✅ CORS CONFIG (FIXED)
+# ✅ CORS CONFIG (HARDCODED FOR STABILITY)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins,
+    allow_origins=[
+        "https://puritypropai.onrender.com",
+        "https://purityprop.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ✅ Explicit OPTIONS handler (important for Vercel)
-@app.options("/{path:path}")
-async def options_handler(path: str):
-    return {}
+# ❌ Explicit OPTIONS handler removed to let CORSMiddleware handle preflights
 
 # ✅ Routers
 # auth_routes.py already defines /auth/*
