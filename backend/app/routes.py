@@ -17,7 +17,7 @@ from app.services.domain_validator import is_real_estate_query, get_rejection_me
 from app.services.llm_service import llm_service
 
 
-router = APIRouter(prefix="/api", tags=["chat"])
+router = APIRouter(tags=["chat"])
 
 
 @router.post("/sessions", response_model=SessionResponse)
