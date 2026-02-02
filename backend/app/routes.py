@@ -95,7 +95,11 @@ async def chat(request: ChatRequest, engine: AIOEngine = Depends(get_engine)):
     ]
     
     # Generate response using LLM
-    response_text, detected_language = llm_service.generate_response(
+    # Generate response using LLM (Async Safe)
+    from fastapi.concurrency import run_in_threadpool
+    
+    response_text, detected_language = await run_in_threadpool(
+        llm_service.generate_response,
         user_message=request.message,
         conversation_history=conversation_history
     )
