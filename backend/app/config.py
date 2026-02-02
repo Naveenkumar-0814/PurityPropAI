@@ -10,8 +10,8 @@ class Settings(BaseSettings):
     
     # Database Configuration
     # Database Configuration
-    database_url: str = "mongodb+srv://naveenkumart949_db_user:Naveenkumar@cluster0.dch6vry.mongodb.net/purityprop?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true"
-    database_name: str = "purityprop"
+    database_url: str = "mongodb+srv://naveenkumart949_db_user:Naveenkumar@cluster0.dch6vry.mongodb.net/real_estate_ai?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true"
+    database_name: str = "real_estate_ai"
     
     # Application Settings
     app_name: str = "Tamil Nadu Real Estate AI Assistant"

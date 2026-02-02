@@ -3,7 +3,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import sys
 
 # Provided connection string
-ATLAS_URL = "mongodb+srv://naveenkumart949_db_user:Naveenkumar@cluster0.dch6vry.mongodb.net/purityprop?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true"
+ATLAS_URL = "mongodb+srv://naveenkumart949_db_user:Naveenkumar@cluster0.dch6vry.mongodb.net/real_estate_ai?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true"
 
 async def check_connection():
     try:
