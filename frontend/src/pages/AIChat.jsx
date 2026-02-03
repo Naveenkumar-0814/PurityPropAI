@@ -60,8 +60,8 @@ const AIChat = () => {
 
     const createNewSession = async () => {
         try {
-            const response = await axios.post(`${API_URL} /api/sessions`, {}, {
-                headers: token ? { Authorization: `Bearer ${token} ` } : {}
+            const response = await axios.post(`${API_URL}/api/sessions`, {}, {
+                headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
             setSessionId(response.data.session_id);
 
@@ -89,11 +89,11 @@ const AIChat = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post(`${API_URL} /api/chat`, {
+            const response = await axios.post(`${API_URL}/api/chat`, {
                 session_id: sessionId,
                 message: messageText
             }, {
-                headers: token ? { Authorization: `Bearer ${token} ` } : {}
+                headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
 
             const assistantMessage = {

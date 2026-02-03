@@ -34,7 +34,7 @@ function Chat() {
             setLoading(true);
             setError(null);
             const response = await axios.post(`${API_URL}/api/sessions`, {}, {
-                headers: { Authorization: `Bearer ${token} ` }
+                headers: { Authorization: `Bearer ${token}` }
             });
             setSessionId(response.data.session_id);
             setMessages([]);
@@ -75,7 +75,7 @@ function Chat() {
                 session_id: sessionId,
                 message: messageText
             }, {
-                headers: { Authorization: `Bearer ${token} ` }
+                headers: { Authorization: `Bearer ${token}` }
             });
 
             // Add assistant response
