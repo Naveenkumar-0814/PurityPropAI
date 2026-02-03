@@ -31,6 +31,8 @@ class Settings(BaseSettings):
         "http://127.0.0.1:3000",
         "https://purity-prop-f.vercel.app",  # Production Frontend
         "https://puritypropai.onrender.com", # Self-reference
+        "https://purityprop.com",            # Custom Domain
+        "https://www.purityprop.com",        # Custom Domain (WWW)
     ]
     
     # LLM Settings
