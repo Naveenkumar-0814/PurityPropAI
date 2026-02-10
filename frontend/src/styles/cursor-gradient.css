@@ -29,7 +29,13 @@ input:hover,
     transition: all 0.3s ease;
 }
 
-/* Subtle glow on focus */\ninput:focus,\ntextarea:focus,\n.chat-input:focus {\n  outline: none;\n  box-shadow: 0 0 20px rgba(20, 184, 166, 0.2), 0 2px 12px rgba(0, 0, 0, 0.4);\n}
+/* Subtle glow on focus */
+input:focus,
+textarea:focus,
+.chat-input:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(20, 184, 166, 0.2), 0 2px 12px rgba(0, 0, 0, 0.4);
+}
 
 /* Animated gradient on buttons */
 .auth-button,

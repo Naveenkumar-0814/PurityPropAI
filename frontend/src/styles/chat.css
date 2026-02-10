@@ -40,7 +40,10 @@
     flex-shrink: 0;
 }
 
-.message-wrapper.user .message-avatar {\n  background: linear-gradient(135deg, #8B5CF6, #6366F1) !important;\n  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);\n}
+.message-wrapper.user .message-avatar {
+    background: linear-gradient(135deg, #8B5CF6, #6366F1) !important;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+}
 
 .message-content-wrapper {
     flex: 1;
@@ -203,76 +206,78 @@
     font-weight: 600;
     margin-top: 1rem;
 }
+
 /* Override all remaining green/teal colors to blue */
 
 /* AI Assistant label color */
 .message-role {
-  color: #9CA3AF !important;
+    color: #9CA3AF !important;
 }
 
-/* AI Assistant Avatar - Bright Teal/Emerald */\n.message-avatar {\n  background: linear-gradient(135deg, #14B8A6, #10B981) !important;\n  box-shadow: 0 0 15px rgba(20, 184, 166, 0.5);\n}
+/* AI Assistant Avatar - Bright Teal/Emerald */
+.message-avatar {
+    background: linear-gradient(135deg, #14B8A6, #10B981) !important;
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.5);
+}
 
 /* Language badge - change from green to blue */
 .language-badge {
-  background: rgba(156, 163, 175, 0.2) !important;
-  border: 1px solid rgba(156, 163, 175, 0.3) !important;
-  color: #9CA3AF !important;
+    background: rgba(156, 163, 175, 0.2) !important;
+    border: 1px solid rgba(156, 163, 175, 0.3) !important;
+    color: #9CA3AF !important;
 }
 
 /* User message background - blue instead of green */
 .message-wrapper.user .message-text {
-  background: rgba(156, 163, 175, 0.12) !important;
-  border-color: rgba(156, 163, 175, 0.25) !important;
+    background: rgba(156, 163, 175, 0.12) !important;
+    border-color: rgba(156, 163, 175, 0.25) !important;
 }
 
 /* Typing dots - blue instead of green */
 .typing-dot {
-  background: #14B8A6 !important;
+    background: #14B8A6 !important;
 }
 
 /* Update any remaining teal/green accents */
 :root {
-  --teal-accent: #14B8A6 !important;
-  --emerald-accent: #10B981 !important;
-  --accent-glow: rgba(156, 163, 175, 0.3) !important;
+    --teal-accent: #14B8A6 !important;
+    --emerald-accent: #10B981 !important;
+    --accent-glow: rgba(156, 163, 175, 0.3) !important;
 }
 
 /* Send button - ensure it's blue */
 .send-button-circle {
-  background: #14B8A6 !important;
+    background: #14B8A6 !important;
 }
 
 .send-button-circle:hover:not(:disabled) {
-  background: #D1D5DB !important;
+    background: #D1D5DB !important;
 }
 
 /* Active navigation - blue */
 .nav-item.active {
-  background: rgba(156, 163, 175, 0.1) !important;
-  color: #9CA3AF !important;
-  border-left-color: #9CA3AF !important;
+    background: rgba(156, 163, 175, 0.1) !important;
+    color: #9CA3AF !important;
+    border-left-color: #9CA3AF !important;
 }
 
 /* Focus states - blue */
 .premium-input-wrapper:focus-within {
-  border-color: #9CA3AF !important;
-  box-shadow: 0 0 20px rgba(156, 163, 175, 0.3) !important;
+    border-color: #9CA3AF !important;
+    box-shadow: 0 0 20px rgba(156, 163, 175, 0.3) !important;
 }
 
 /* Prompt card hover - blue */
 .prompt-card:hover {
-  border-color: #9CA3AF !important;
+    border-color: #9CA3AF !important;
 }
 
 /* New chat link hover */
 .new-chat-link:hover {
-  color: #9CA3AF !important;
+    color: #9CA3AF !important;
 }
 
 /* Copy button hover */
 .copy-btn:hover {
-  color: #9CA3AF !important;
+    color: #9CA3AF !important;
 }
-
-
-
